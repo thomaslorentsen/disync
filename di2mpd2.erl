@@ -169,12 +169,12 @@ has_station_changed(Station) ->
 %% a certain number of plays.
 repeated_init(Max) ->
         io:format("~p ~p ~p Repeat server is running~n", [self(),time(), date()]),
-        Songs = lists:sublist(load("/home/tom/disync/songs.bin"),Max),
+        Songs = lists:sublist(load("/var/disync/songs.bin"),Max),
         io:format("~p ~p ~p ~b songs loaded~n", [self(),time(), date(), string:len(Songs)]),
         repeated_loop(Max, Songs).
 
 repeated_loop(Max, List) ->
-        save("/home/tom/disync/songs.bin", List),
+        save("/var/disync/songs.bin", List),
         receive
                 {add, Name} ->
                         repeated_loop(Max, lists:sublist([Name]++List, Max));
