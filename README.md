@@ -1,5 +1,10 @@
 # disync
 Synchronise a MPD playlist with Streamripper
+# Building
+Build by running
+```bash
+make
+```
 # Running
 Start the program with
 ```bash
