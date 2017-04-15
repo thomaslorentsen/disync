@@ -1,4 +1,4 @@
-# disync
+# DI Sync
 Synchronise a MPD playlist with Streamripper
 # Building
 Build by running
